@@ -5,7 +5,9 @@
 // Muhammad Iddad
 // 1306381603
 
+#include <stdlib.h>
 #include <glut.h>
+#include <iostream>
 
 typedef struct _param {
 	GLfloat eyex, eyey, eyez, centerx, centery, centerz, upx, upy, upz;
@@ -79,7 +81,7 @@ GLfloat tx = 0;
 GLfloat ty = 0;
 GLfloat tz = 0;
 int tstate = 1;
-GLfloat speed = 0.1;
+GLfloat speed = 0.01;
 //cube view volume
 GLfloat vertices[] =
 { -10.0,-10.0,-10.0, 10.0,-10.0,-10.0,
@@ -203,6 +205,14 @@ void DrawBorder(void) //draw viewing volume
 	glPopMatrix();
 }
 
+void teapod(void) 
+{
+	glPushMatrix();
+	glPolygonMode(GL_FRONT, GL_FILL);
+	glTranslatef(tx, ty, tz);
+	glutSolidTeapot(1.5);
+	glPopMatrix();
+}
 
 void OnResizeWindow(int cx, int cy)
 {
@@ -243,17 +253,19 @@ void init(void)
 
 }
 void idle() {
+	std::cout << tx << std::endl;
 	switch (tstate) {
 	case 1:
-		if (tx != 5) {
+		if (tx <= 5.0) {
 			tx += speed;
+			std::cout << tx << std::endl;
 		}
 		else {
 			tstate = 2;
 		}
 		break;
 	case 2:
-		if (tx != -5) {
+		if (tx >= -5) {
 			tx -= speed;
 		}
 		else {
@@ -261,7 +273,7 @@ void idle() {
 		}
 		break;
 	case 3:
-		if (tx != 0) {
+		if (tx <= 0) {
 			tx += speed;
 		}
 		else {
@@ -269,7 +281,7 @@ void idle() {
 		}
 		break;
 	case 4:
-		if (ty != 5) {
+		if (ty <= 5) {
 			ty += speed;
 		}
 		else {
@@ -277,7 +289,7 @@ void idle() {
 		}
 		break;
 	case 5:
-		if (ty != -5) {
+		if (ty >= -5) {
 			ty -= speed;
 		}
 		else {
@@ -285,7 +297,7 @@ void idle() {
 		}
 		break;
 	case 6:
-		if (ty != 0) {
+		if (ty <= 0) {
 			ty += speed;
 		}
 		else {
@@ -293,7 +305,7 @@ void idle() {
 		}
 		break;
 	case 7:
-		if (tz != 5) {
+		if (tz <= 5) {
 			tz += speed;
 		}
 		else {
@@ -301,7 +313,7 @@ void idle() {
 		}
 		break;
 	case 8:
-		if (tz != -5) {
+		if (tz >= -5) {
 			tz -= speed;
 		}
 		else {
@@ -309,7 +321,7 @@ void idle() {
 		}
 		break;
 	case 9:
-		if (tz != 0) {
+		if (tz <= 0) {
 			tz += 0;
 		}
 		else {
@@ -325,11 +337,7 @@ void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	DrawBorder();
-	glPushMatrix();
-	glPolygonMode(GL_FRONT, GL_FILL);
-	glutSolidTeapot(1.5);
-	glTranslatef(tx, ty, tz);
-	glPopMatrix();
+	teapod();
 	glutSwapBuffers();
 }
 
