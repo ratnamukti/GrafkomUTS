@@ -381,7 +381,9 @@ int main(int argc, char* argv[])
 	glutInitDisplayMode(mode);
 	glutInitWindowSize(800, 600);
 	glutInitWindowPosition(50, 50);
-	glutCreateWindow("UTS2 - Mgs. M. Rizqi Fadhlurrahman - 1306464543");
+
+	glutCreateWindow("Soal2 - Desi & Iddad");
+
 	init();
 	glutSpecialFunc(special);
 	glutKeyboardFunc(keyboard);
