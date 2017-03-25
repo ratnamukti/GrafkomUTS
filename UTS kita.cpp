@@ -75,13 +75,16 @@ param parameter[8][5] = {
 // camera coordinates
 int kx = 0;
 int ky = 2;
+bool isClicked = true;
 
 // teapot coordinates
 GLfloat tx = 0;
 GLfloat ty = 0;
 GLfloat tz = 0;
+
 int tstate = 1;
-GLfloat speed = 0.01;
+
+GLfloat speed = 0.006;
 //cube view volume
 GLfloat vertices[] =
 { -10.0,-10.0,-10.0, 10.0,-10.0,-10.0,
@@ -161,11 +164,10 @@ void arrowInput(int key, int x, int y) {
 }
 void keyboardInput(unsigned char key, int xmouse, int ymouse) {
 	switch (key) {
+	case'a' :
+		isClicked = !isClicked;
 	}
-	
-	glLoadIdentity();
-	SetupViewingTransform();
-	glutPostRedisplay();
+
 }
 int SetupLighting() //setup lighting and materials, will be explained later
 {
@@ -210,7 +212,7 @@ void teapod(void)
 	glPushMatrix();
 	glPolygonMode(GL_FRONT, GL_FILL);
 	glTranslatef(tx, ty, tz);
-	glutSolidTeapot(1.5);
+	glutSolidTeapot(1.0);
 	glPopMatrix();
 }
 
@@ -253,84 +255,87 @@ void init(void)
 
 }
 void idle() {
-	switch (tstate) {
-	case 1:
-		if (tx <= 5.0) {
-			tx += speed;
+	if (isClicked){
+		switch (tstate) {
+		case 1:
+			if (tx <= 5.0) {
+				tx += speed;
+			}
+			else {
+				tstate = 2;
+			}
+			break;
+		case 2:
+			if (tx >= -5) {
+				tx -= speed;
+			}
+			else {
+				tstate = 3;
+			}
+			break;
+		case 3:
+			if (tx <= 0) {
+				tx += speed;
+			}
+			else {
+				tstate = 4;
+			}
+			break;
+		case 4:
+			if (ty <= 5) {
+				ty += speed;
+			}
+			else {
+				tstate = 5;
+			}
+			break;
+		case 5:
+			if (ty >= -5) {
+				ty -= speed;
+			}
+			else {
+				tstate = 6;
+			}
+			break;
+		case 6:
+			if (ty <= 0) {
+				ty += speed;
+			}
+			else {
+				tstate = 7;
+			}
+			break;
+		case 7:
+			if (tz <= 5) {
+				tz += speed;
+			}
+			else {
+				tstate = 8;
+			}
+			break;
+		case 8:
+			if (tz >= -5) {
+				tz -= speed;
+			}
+			else {
+				tstate = 9;
+			}
+			break;
+		case 9:
+			if (tz <= 0) {
+				tz += speed;
+			}
+			else {
+				tstate = 1;
+			}
+			break;
 		}
-		else {
-			tstate = 2;
-		}
-		break;
-	case 2:
-		if (tx >= -5) {
-			tx -= speed;
-		}
-		else {
-			tstate = 3;
-		}
-		break;
-	case 3:
-		if (tx <= 0) {
-			tx += speed;
-		}
-		else {
-			tstate = 4;
-		}
-		break;
-	case 4:
-		if (ty <= 5) {
-			ty += speed;
-		}
-		else {
-			tstate = 5;
-		}
-		break;
-	case 5:
-		if (ty >= -5) {
-			ty -= speed;
-		}
-		else {
-			tstate = 6;
-		}
-		break;
-	case 6:
-		if (ty <= 0) {
-			ty += speed;
-		}
-		else {
-			tstate = 7;
-		}
-		break;
-	case 7:
-		if (tz <= 5) {
-			tz += speed;
-		}
-		else {
-			tstate = 8;
-		}
-		break;
-	case 8:
-		if (tz >= -5) {
-			tz -= speed;
-		}
-		else {
-			tstate = 9;
-		}
-		break;
-	case 9:
-		if (tz <= 0) {
-			tz += speed;
-		}
-		else {
-			tstate = 1;
-		}
-		break;
+		glLoadIdentity();
+		SetupViewingTransform();
+		glutPostRedisplay();
 	}
-	glLoadIdentity();
-	SetupViewingTransform();
-	glutPostRedisplay();
 }
+
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
