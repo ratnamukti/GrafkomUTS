@@ -253,12 +253,10 @@ void init(void)
 
 }
 void idle() {
-	std::cout << tx << std::endl;
 	switch (tstate) {
 	case 1:
 		if (tx <= 5.0) {
 			tx += speed;
-			std::cout << tx << std::endl;
 		}
 		else {
 			tstate = 2;
@@ -322,7 +320,7 @@ void idle() {
 		break;
 	case 9:
 		if (tz <= 0) {
-			tz += 0;
+			tz += speed;
 		}
 		else {
 			tstate = 1;
