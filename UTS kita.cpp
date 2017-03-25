@@ -1,9 +1,9 @@
 // Template-Lab6.cpp, template untuk latihan penggunaan gluLookAt
 // oleh Dadan Hardianto - Fasilkom UI 2014-2017
 
-// Jawaban Lab6 B
-// Muhammad Iddad
-// 1306381603
+// Soal2 UTS
+// Muhammad Iddad & Desi Ratna Mukti 
+// 1306381603 & 1306397904
 
 #include <stdlib.h>
 #include <glut.h>
@@ -349,7 +349,7 @@ int main(int argc, char* argv[])
 	glutInitDisplayMode(mode);
 	glutInitWindowSize(800, 600);
 	glutInitWindowPosition(200, 150);
-	glutCreateWindow("Muhammad Iddad - LAB 6 A");
+	glutCreateWindow("Soal2 UTS - Desi & Iddad");
 
 	init();
 	glutSpecialFunc(arrowInput);
