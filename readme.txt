@@ -38,6 +38,34 @@ Mode
 Clear
 c : clear
 
+
+MANUAL PENGGUNAAN:
+CARA 1
+1. tambahkan file glut32.dll pada folder yang berisi .exe program
+(bila belum ada)
+2. klik soal1.exe
+3. program akan ditampilkan pada komputer Anda
+4. tekan tombol panah 'up/down/right/left' untuk menggerakan animasi
+sesuai arah
+5. klik tombol keyboard seperti yang dideskripsikan diatas untuk
+menjalankan perintah masing-masing
+6. Bila garis menabrak border window, animasi selesai
+7. untu mengulang agar display bersih kembali, klik 'c'
+
+PETUNJUK KOMPILASI:
+1. Pada proyek Visual Studio Anda, arahkan ke menu Source Files
+2. pilih add > existing item > soal1.cpp
+3. pastikan hanya ada satu .cpp dalam Source Files
+4. Run dengan klik 'Local Windows Debugger'
+5. program akan ditampilkan pada komputer Anda
+
+FILE YANG DIBUTUHKAN:
+1. glut32.dll
+2. glut32.lib
+3. glut.h
+
+letakkan ketika file tersebut pada UTS-IddadDesi > Debug
+
 ################################################################
 
 Keterangan Nomor 2
@@ -55,8 +83,30 @@ Left arrow: untuk mengubah sudut pandang kamera ke kiri
 
 s : Stop
 
+
+MANUAL PENGGUNAAN:
+CARA 1
+1. tambahkan file glut32.dll pada folder yang berisi .exe program
+(bila belum ada)
+2. klik soal2.exe
+3. program akan ditampilkan pada komputer Anda
+
+PETUNJUK KOMPILASI:
+1. Pada proyek Visual Studio Anda, arahkan ke menu Source Files
+2. pilih add > existing item > soal2.cpp
+3. pastikan hanya ada satu .cpp dalam Source Files
+4. Run dengan klik 'Local Windows Debugger'
+5. program akan ditampilkan pada komputer Anda
+
+FILE YANG DIBUTUHKAN:
+1. glut32.dll
+2. glut32.lib
+3. glut.h
+
+letakkan ketika file tersebut pada UTS-IddadDesi > Debug
+
 ################################################################
 
 Author:
-Muhammad Iddad Izzatulummah - 1306381603
-Desi Desi Ratna Mukti Umpuan - 1306397904
+Muhammad Iddad Izzatulummah - 1306381603 - idadidut@gmail.com
+Desi Desi Ratna Mukti Umpuan - 1306397904 - desi.rmu@gmail.com
