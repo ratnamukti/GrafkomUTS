@@ -1,4 +1,4 @@
-ini adalah UTS Grafkom
+ini adalah UTS Grafkom Genap 2016/2017
 
 Keterangan Nomor 1
 
@@ -37,9 +37,14 @@ c : clear
 Keeterangan Nomor 2
 
 Input :
-Arrow : untuk mengubah sudut pandang kamera
+
+Arrow atas: untuk mengubah sudut pandang kamera ke atas
+Arrow bawah: untuk mengubah sudut pandang kamera ke bawah
+Arrow kanan: untuk mengubah sudut pandang kamera ke kanan
+Arrow kiri: untuk mengubah sudut pandang kamera ke kiri
+
 S : Stop
 
 Author:
-Iddad
-Desi
+Muhammad Iddad Izzatulummah - 1306381603
+Desi Desi Ratna Mukti Umpuan - 1306397904
