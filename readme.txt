@@ -2,6 +2,12 @@ ini adalah UTS Grafkom Genap 2016/2017
 
 Keterangan Nomor 1
 
+Program c++ ini merupakan sebuah animasi interaktif dimana 
+pengguna bisa menggambar menggunakan arrow pada keyboard. 
+Fitur unik yang diberikan oleh program ini adalah saat 
+pengguna menggambar, maka akan ter-display juga hasil mirror 
+dari gambar tersebut secara bersamaan.
+
 Input : 
 
 Arah
@@ -34,16 +40,18 @@ c : clear
 
 ################################################################
 
-Keeterangan Nomor 2
+Keterangan Nomor 2
 
 Input :
 
-Arrow atas: untuk mengubah sudut pandang kamera ke atas
-Arrow bawah: untuk mengubah sudut pandang kamera ke bawah
-Arrow kanan: untuk mengubah sudut pandang kamera ke kanan
-Arrow kiri: untuk mengubah sudut pandang kamera ke kiri
+Up arrow: untuk mengubah sudut pandang kamera ke atas
+Down arrow: untuk mengubah sudut pandang kamera ke bawah
+Right arrow: untuk mengubah sudut pandang kamera ke kanan
+Left arrow: untuk mengubah sudut pandang kamera ke kiri
 
 S : Stop
+
+################################################################
 
 Author:
 Muhammad Iddad Izzatulummah - 1306381603
