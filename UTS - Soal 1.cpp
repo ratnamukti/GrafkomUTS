@@ -1,9 +1,9 @@
 // Template-Lab6.cpp, template untuk latihan penggunaan gluLookAt
 // oleh Dadan Hardianto - Fasilkom UI 2014-2017
 
-// Jawaban Lab6 B
-// Muhammad Iddad
-// 1306381603
+// Soal1 UTS
+// Muhammad Iddad & Desi Ratna Mukti 
+// 1306381603 & 1306397904
 
 #define NONE 0
 #define UP 1
@@ -52,6 +52,8 @@ void clear() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+
+// method untuk menggerakkan obyek lewat panah keyboard
 void arrowInput(int key, int x, int y) {
 	isRun = true;
 	switch (key) {
@@ -228,6 +230,9 @@ void idle() {
 
 void keyboardInput(unsigned char key, int xmouse, int ymouse) {
 	switch (key) {
+
+		// klik 1,2, dan 3 untuk mirror berdasarkan masing-masing
+		// vertikal, horizontal atau keduanya
 		case '1':
 			mode = VER;
 			clear();
@@ -240,14 +245,20 @@ void keyboardInput(unsigned char key, int xmouse, int ymouse) {
 			mode = BOTH;
 			clear();
 			break;
+
+		// jika diklik s maka animasi stop
 		case 's': 
 			isRun = !isRun;
 			break;
+
+		// jika diklik a maka kecepatan berkurang
 		case 'a':
 			if (delay > 5) {
 				delay--;
 			}
 			break;
+
+		// jika diklik d maka kecepatan berkurang
 		case 'd':
 			if (delay < 30) {
 				delay++;
@@ -256,6 +267,8 @@ void keyboardInput(unsigned char key, int xmouse, int ymouse) {
 		case 'c':
 			clear();
 			break;
+
+		// tombol 'qwertyu' untuk set warna garis 
 		case 'q':
 			lx1 = lx2; ly1 = ly2;
 			mx1 = mx2; my1 = my2;
@@ -367,7 +380,7 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(ww, wh);
-	glutCreateWindow("Sesuatu");
+	glutCreateWindow("Soal1 UTS - Desi & Iddad");
 	glutSpecialFunc(arrowInput);
 	glutIdleFunc(idle);
 	glutDisplayFunc(display);

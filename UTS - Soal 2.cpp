@@ -97,7 +97,6 @@ GLubyte cubeIndices[] = { 0, 3, 2, 1, 2, 3, 7, 6, 0, 4, 7, 3, 1, 2, 6, 5, 4, 5, 
 
 int SetupViewport(int cx, int cy)
 {
-
 	glViewport(0, 0, cx, cy);
 	return 1;
 }
@@ -110,7 +109,6 @@ int SetupPerspectiveViewing(GLdouble aspect_ratio)
 
 int SetupViewingTransform()
 {
-
 	gluLookAt(parameter[kx][ky].eyex, parameter[kx][ky].eyey, parameter[kx][ky].eyez, 
 		parameter[kx][ky].centerx, parameter[kx][ky].centery, parameter[kx][ky].centerz, 
 		parameter[kx][ky].upx, parameter[kx][ky].upy, parameter[kx][ky].upz);
@@ -118,6 +116,8 @@ int SetupViewingTransform()
 	return 1;
 }
 
+
+// membaca input tombol panah untuk menggerakan teapot
 void arrowInput(int key, int x, int y) {
 	switch (key) {
 	case GLUT_KEY_RIGHT:
@@ -162,9 +162,11 @@ void arrowInput(int key, int x, int y) {
 	SetupViewingTransform();
 	glutPostRedisplay();
 }
+
+// method untuk menghentikan pergerakan teapot
 void keyboardInput(unsigned char key, int xmouse, int ymouse) {
 	switch (key) {
-	case'a' :
+	case's' :
 		isClicked = !isClicked;
 	}
 
@@ -207,6 +209,7 @@ void DrawBorder(void) //draw viewing volume
 	glPopMatrix();
 }
 
+// method menggambar teapot
 void teapod(void) 
 {
 	glPushMatrix();
@@ -242,9 +245,9 @@ void OnResizeWindow(int cx, int cy)
 }
 
 
+// method untuk mengatur pencahayaan obyek
 void init(void)
 {
-
 	SetupLighting();
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glClearDepth(1.0f);
@@ -254,6 +257,9 @@ void init(void)
 	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // Polygon rasterization mode (polygon outlined)
 
 }
+
+// method yang menggerakan teapot selama belum diklik tombol 's'
+// juga mengatur kecepatan gerak teapot
 void idle() {
 	if (isClicked){
 		switch (tstate) {
