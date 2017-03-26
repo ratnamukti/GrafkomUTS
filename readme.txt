@@ -106,5 +106,5 @@ letakkan ketika file tersebut pada UTS-IddadDesi > Debug
 ################################################################
 
 Author:
-Muhammad Iddad Izzatulummah - 1306381603 - idadidut@gmail.com
+Muhammad Iddad Izzatulummah - 1306381603 - muhammad.iddad@gmail.com
 Desi Desi Ratna Mukti Umpuan - 1306397904 - desi.rmu@gmail.com
