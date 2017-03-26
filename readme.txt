@@ -40,7 +40,6 @@ c : clear
 
 
 MANUAL PENGGUNAAN:
-CARA 1
 1. tambahkan file glut32.dll pada folder yang berisi .exe program
 (bila belum ada)
 2. klik soal1.exe
@@ -85,7 +84,6 @@ s : Stop
 
 
 MANUAL PENGGUNAAN:
-CARA 1
 1. tambahkan file glut32.dll pada folder yang berisi .exe program
 (bila belum ada)
 2. klik soal2.exe
