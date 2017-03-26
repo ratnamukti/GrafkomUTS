@@ -42,6 +42,10 @@ c : clear
 
 Keterangan Nomor 2
 
+Program c++ ini memiliki fitur untuk melihat obyek dari 26 titik kamera.
+Obyek yang digunakan adalah sebuat teapot yang bergerak hingga batas-batas
+kotak.
+
 Input :
 
 Up arrow: untuk mengubah sudut pandang kamera ke atas
@@ -49,7 +53,7 @@ Down arrow: untuk mengubah sudut pandang kamera ke bawah
 Right arrow: untuk mengubah sudut pandang kamera ke kanan
 Left arrow: untuk mengubah sudut pandang kamera ke kiri
 
-S : Stop
+s : Stop
 
 ################################################################
 
